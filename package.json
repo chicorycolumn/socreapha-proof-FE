@@ -33,6 +33,16 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "phaser": "^3.20.1"
+    "@babel/preset-react": "^7.9.4",
+    "babel-preset-react": "^6.24.1",
+    "path": "^0.12.7",
+    "phaser": "^3.20.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-tools": "^0.13.3",
+    "socket.io-client": "^2.3.0"
+  },
+  "resolutions": {
+    "**/@babel/runtime": "7.5.0"
   }
 }

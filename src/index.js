@@ -1,5 +1,10 @@
 import Phaser from "phaser";
 import logoImg from "./assets/logo.png";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App.jsx";
+
+console.log("in index.js");
 
 const config = {
   type: Phaser.AUTO,
@@ -8,8 +13,8 @@ const config = {
   height: 600,
   scene: {
     preload: preload,
-    create: create
-  }
+    create: create,
+  },
 };
 
 const game = new Phaser.Game(config);
@@ -24,9 +29,11 @@ function create() {
   this.tweens.add({
     targets: logo,
     y: 450,
-    duration: 2000,
+    duration: 100,
     ease: "Power2",
     yoyo: true,
-    loop: -1
+    loop: 0,
   });
 }
+
+ReactDOM.render(<App />, document.getElementById("root"));
