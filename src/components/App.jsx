@@ -1,5 +1,9 @@
 import React from "react";
 import socketIOClient from "socket.io-client";
+const endpoint = "http://127.0.0.1:4001";
+const socket = socketIOClient(endpoint);
+socket.favouritecolor = "crimson";
+// import { socket } from "../index";
 
 export default class App extends React.Component {
   constructor() {
@@ -11,12 +15,25 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    const { endpoint } = this.state;
-    const socket = socketIOClient(endpoint);
-    socket.on("time", (data) => this.setState({ response: data }));
+    // console.log(this.props);
+    // const { endpoint } = this.state;
+    // const socket = socketIOClient(endpoint);
+
+    // this.props.sock.on("time", (data) => {
+    //   this.setState({ response: data });
+    // });
+
+    console.log("REACT SOCKET");
+    console.log(socket);
+    console.log("REACT SOCKET");
+
+    socket.on("time", (data) => {
+      this.setState({ response: data });
+    });
   }
 
   render() {
+    console.log("in app.jsx");
     const { response } = this.state;
     return (
       <div style={{ textAlign: "center" }}>
